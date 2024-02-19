@@ -1,8 +1,8 @@
 public abstract class Electrodomestico { // de las clases abstractas no se pueden crear objetos
 
-    private String tipo;
-    private String marca;
-    private double potencia;
+    protected String tipo;
+    protected String marca;
+    protected double potencia;
 
     public String getTipo() {
         return tipo;
@@ -51,7 +51,9 @@ public abstract class Electrodomestico { // de las clases abstractas no se puede
 
    public abstract double  getConsumo(int horas);
 
-    public abstract  double getCosteConsumo(int horas, double costeHora);
+    public double getCosteConsumo(int horas, double costeHora){
+        return horas*costeHora;
+    }
 
 
 
