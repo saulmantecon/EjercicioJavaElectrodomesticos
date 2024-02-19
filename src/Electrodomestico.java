@@ -1,4 +1,4 @@
-public class Electrodomestico {
+public abstract class Electrodomestico { // de las clases abstractas no se pueden crear objetos
 
     private String tipo;
     private String marca;
@@ -28,7 +28,9 @@ public class Electrodomestico {
         this.potencia = potencia;
     }
 
-    public Electrodomestico() { // constructor vacio
+    public Electrodomestico(String marca, double potencia) {
+        this.marca = marca;
+        this.potencia = potencia;
     }
 
     public Electrodomestico(String tipo, String marca, double potencia) {
@@ -36,6 +38,7 @@ public class Electrodomestico {
         this.marca = marca;
         this.potencia = potencia;
     }
+
 
     @Override
     public String toString() {
@@ -45,6 +48,12 @@ public class Electrodomestico {
                 ", potencia=" + potencia +
                 '}';
     }
+
+   public abstract double  getConsumo(int horas);
+
+    public abstract  double getCosteConsumo(int horas, double costeHora);
+
+
 
 
 }
